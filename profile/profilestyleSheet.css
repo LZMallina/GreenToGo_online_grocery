@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+*{  
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    border-radius:5px;
+}
+body{
+    background:rgb(233, 232, 232);
+}
+a{
+    text-decoration:none;
+    color:black;
+}
+button:hover, a:hover{
+    color:rgb(12, 204, 12);
+}
+/****end of Global****/
+.form-container{
+    background:white;
+    width:60vw;
+    display:block;
+    margin:0 auto;
+    margin-top:60px;
+    text-align:center;
+}
+h1{
+    font-size:3rem;
+    font-family:cursive;
+    color:rgb(16, 214, 16);
+    padding:20px;
+}
+h4{
+    padding:10px;
+    font-size:1.5rem;
+}
+#line{
+    width:12vw;
+    height:2px;
+    background:gold;
+    display:block;
+    margin:auto;
+}
+h3{
+    padding:10px;
+    font-size:2rem;
+}
+p{
+    font-size:1.25rem;
+    padding:20px;
+    text-align:center;
+}
+.profile-content{
+    font-size:1.5rem;
+    padding:20px;
+    width:30vw;
+    display:block;
+    margin:auto;
+    text-align:left;
+}
+input,select{
+    width:30vw;
+    font-size:1.25rem;
+}   
+form > p{
+    text-align:center;
+}
+form > p > a{
+    color:red;
+    text-decoration:underline;
+}
+form{
+    padding-bottom:20px;
+    border-bottom:1px solid lightgrey;
+    border-radius:0%;
+}
+.submit-btns:hover{
+    color:white;
+    cursor: pointer;
+    background:gold;
+}
+.ending-message > a{
+    padding-right:10px;
+}
+
+/**adjust to screen size**/
+/**Adjust the columns of containers inside store*/
+@media screen and (max-width:800px){
+    .form-container{
+        width:100%;
+    }
+    .profile-content{
+        width:100%;
+    }
+    input,select {
+            width:100%;
+        }
+}

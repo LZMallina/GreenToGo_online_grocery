@@ -1,0 +1,362 @@
+/***Global*****/
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+*{  
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    border-radius:5px;
+}
+body{
+    background:rgb(233, 232, 232);
+}
+a{
+    text-decoration:none;
+    color:black;
+}
+button:hover, a:hover{
+    color:rgb(12, 204, 12);
+    cursor: pointer;
+}
+/****end of Global****/
+
+/****nav bar****/
+nav{
+    background:white;
+    overflow:hidden;
+    text-align:left;
+}
+.logo-container{
+    text-align:center;
+}
+#logo{
+    width:250px;
+    background:none;
+}
+.order-option-container{
+    float:left;
+    padding-left:10px;
+}
+#location,#checkout,#sign-in,#openNavBTN{
+    float:right;
+}
+.order-option-container > a,#location,#checkout,#sign-in,#openNavBTN{
+    padding: 0px 20px 10px 20px;
+}
+#cart-item{
+    background:orange;
+    text-align:center;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    position:relative;
+    left:20px;
+    top:-30px;
+}
+
+#openNavBTN{
+    display:none;
+}
+.nav-bar-open{
+    background:white;
+    display:block;
+}
+
+ul,li{
+    list-style-type:none;
+    display:inline;
+    padding: 0px 20px 0px 10px;
+}
+/****adjust nav bar to mobile screen***/
+@media screen and (max-width:600px){
+    .order-option-container{
+        display:none;
+    }
+    #openNavBTN{
+        display:block;
+    }
+    .nav-bar-open{
+        display:none;
+    }
+    .showNav{
+        display:block;
+    }
+    ul,li{
+    list-style-type:none;
+    padding: 10px 0px 10px 20px;
+    display:list-item;
+}   
+}
+
+/****chat box***/
+
+.chat-popup{
+    border:1px solid black;
+    position:fixed;
+    z-index:1;
+    margin-top:1rem;
+    padding:10px;
+    background:rgb(227, 240, 245);
+    text-align:center;
+    display:none;
+}
+.closebtn{
+    float:right;
+    font-weight:bold;
+    font-size:1.5rem;
+    cursor: pointer;
+}
+.closebtn:hover{
+    color:rgb(12, 204, 12);
+    transform:scale(1.5);
+}
+textarea{
+    width:90%;
+    height:30vh;
+    font-size:0.75rem;
+    padding:5px;
+}
+.sendbtn{
+    width:90%;
+    padding:5px;
+    cursor: pointer;
+}
+.sendbtn:hover{
+    background:lightgrey;
+}
+
+/***farms map***/
+.map{
+    width:500px;
+    height:200px;
+    position:relative;
+    top:20px;
+    z-index:1;
+    display:none;
+    margin:auto;
+}
+
+/**sign-in modal**/
+.signIn-modal{
+    display:none;
+    position:fixed;
+    z-index:1;
+    padding-top:100px;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow:auto;
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.4);
+}
+.signInmodal-content{
+    background-color:white;
+    width:50vw;
+    margin:auto;
+    padding:1rem;
+    border: 1px solid #888;
+    border-radius:5px;
+    text-align:left;
+    padding:0.75rem;
+    font-size:1.5rem;
+    color:black;
+}
+.signin-content{
+    font-size:1rem;
+}
+#signin-email, #password{
+    font-size:20px;
+    width:47vw;
+}
+#signin-submit{
+    display:block;
+    margin:auto;
+    padding:10px;
+    font-size:1.5rem;
+    background:gold;
+    width:25vw;
+}
+
+/*** store main page content***/
+.store{
+    text-align:center;
+    padding:3rem;
+    color:rgb(43, 184, 43);
+}
+
+.selection-container{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    grid-gap: 10px;
+    padding:10px;
+}
+
+.picture{
+    width:250px;
+    height:200px;
+    padding:10px;
+}
+.selection{
+    padding: 5px;
+    border:2px rgb(196, 194, 194) solid;
+    background:white;
+}
+.selection:hover{
+    opacity:0.75;
+}
+
+/**produce modal **/
+
+.produce-container{
+    background:white;
+    margin: 0 auto;
+    display:none;
+    padding:20px;
+    position:relative;
+    top:-500px;
+    width:85vw;
+    height:95vh;
+}
+.close-btn{
+    float:right;
+    background:none;
+    border:none;
+}
+
+.produce-filter-btn{
+    border-radius:10px;
+    width:100px;
+    cursor: pointer;
+}
+
+.product-container{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    grid-gap: 10px;
+}
+.product{
+    padding:10px;
+    background:rgb(233, 232, 232);
+}
+
+#buy{
+    border:none;
+    font-size:20px;
+    background:orange;
+    width:80%;
+    transition: width 0.5s;
+}
+#buy:hover{
+    background: yellow;
+    width:92%;
+}
+
+/**Adjust the columns of containers inside store**/
+@media screen and (max-width:1002px){
+    .selection-container, .product-container{
+    display:grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    grid-gap: 10px;
+    padding:10px;
+}
+.picture{
+    width:200px;
+    height:150px;
+    padding:10px;
+}
+.produce-container{
+    background:white;
+    display:none;
+    padding:20px;
+    position:relative;
+    top:-600px;
+    left:-50px;
+    width:100vw;
+    height:110vh;
+}
+}
+
+/***footer**/
+footer{
+    background:white;
+    width:100%;   
+}
+iframe{
+    background:none;
+    border:none;
+    display:block;
+    margin:auto;
+    overflow:hidden;
+}
+/***modal background***/
+.promotion-modal{
+    display:none;
+    position:fixed;
+    z-index:1;
+    padding-top:100px;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow:auto;
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.4);
+}
+
+/**Promotion-modal content**/
+.modal-content{
+    background-image:url(modal-background2.jpg);
+    background-size:45vw auto;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-color:white;
+    width:50vw;
+    margin:auto;
+    padding:1rem;
+    border: 1px solid #888;
+    border-radius:5px;
+    text-align:center;
+    padding:0.75rem;
+    font-size:1.5rem;
+    color:rgb(8, 247, 207);
+}
+.closeModal, .closeSignin, .closeMap{
+    float:right;
+    font-size:30px;
+    background:none;
+    border:none;
+}
+#coupon, #submit{
+    font-size:1.25rem;
+    padding:0.5rem;
+}
+#email{
+    width:200px;
+    padding:0.25rem;
+    text-align:center;
+    font-size:20px;
+}
+/**Adjust the promotion modal to screen size*/
+@media screen and (max-width:600px){
+    .modal-content{
+    background-image:url(modal-background2.jpg);
+    background-size:85vw 70vh;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-color:white;
+    width:85vw;
+    margin:auto;
+    padding:1rem;
+    border: 1px solid #888;
+    border-radius:5px;
+    text-align:center;
+    padding:0.75rem;
+    font-size:1.5rem;
+    color:rgb(8, 247, 207);        
+}
+}

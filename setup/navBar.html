@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Nav-bar for store project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--icon library-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--------------------->
+    <link rel="stylesheet" href="navBar.css"/>
+</head>
+<body>
+<!--nav bar-->
+<nav class = "nav-bar">
+    <a href ="../store.html">
+        <img id ="logo2" src = "../lettuce.png" alt="lettuce">
+    </a>
+    <div class = "tabs">
+        <a href = "../store.html" id = "home">HOME</a>
+        <a href ="#navbTN" id = "openSideBTN">
+            <i class="fas fa-bars"></i>
+        </a>
+        <a href ="#checkout" id ="checkout">
+        <i class="fas fa-shopping-cart"></i>
+        </a>
+        <a href="#createAccount" id ="sign-in"> SIGN-IN/CREATE ACCOUNT</a>
+    </div>
+</nav>
+<!---sidebar that opens when the screen is small-->
+  <div class = "side-bar">
+        <button class="closebtn">&times;</button>
+        <div class = "tabs">
+        <a href="../store.html">HOME</a>
+        <a href="#sign-in">SIGN-IN/ CREATE ACCOUNT</a>
+        
+        </div>
+    </div>
+<script src ="navBarApp.js"></script>
+</body>
+</html>

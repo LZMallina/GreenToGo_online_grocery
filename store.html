@@ -1,0 +1,134 @@
+<!--Project demand: 1) interactive nav-bar that adjust to mobile screen size 2) Update menu items and categories through javascript (create local api of items) 3) sort items by categories, price, and calories 4) popup for pomotion 5) location that would link to a map 6) Sign-in form 7) Active shopping cart--->
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Project #8: Dynamic e-commerce website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--icon library-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--------------------->
+    <link rel="stylesheet" href="styleSheet.css" />
+</head>
+<body>
+
+<!--nav bar-->
+<nav class = "nav-bar">
+    <div class = "logo-container">
+        <img id ="logo" src = "logo3.jpg" alt="lettuce">
+        <span style ="color:green"><em><strong>An Online Grocery Store</strong></em> </span>
+    </div>
+    <br>
+    <a href ="#navbTN" id = "openNavBTN">
+            <i class="fas fa-bars"></i>
+    </a>
+    <a href="#createAccount" id ="sign-in"> SIGN-IN</a>
+    <a href ="#checkout" id ="checkout">
+        <i class="fas fa-shopping-cart"></i>
+        <div id = "cart-item">0</div>
+    </a>
+    <a href="#location" id = "location">
+        <i class="fas fa-map-marker-alt"></i> FARM
+    </a> 
+    <ul class = "nav-bar-open">
+        <li>ORDER BY: </li>
+        <li><a href = "./order/order.html">
+            <i class="fas fa-shopping-basket"></i> ONLINE
+        </a></li>
+        <li><a href ="tel:+8001234567">
+            <i class="fas fa-phone"></i> (800)123-4567
+        </a></li>
+        <li><a href="mailto:greenstogo@gmail.com">
+            <i class="fa fa-envelope" aria-hidden="true"></i> greenstogo@gmail.com
+        </a></li>
+        <li><a href="#chat" onclick ="openChat()">
+            <i class="far fa-comment"></i> CHAT
+            </a></li>
+    </ul>
+</div>
+</nav>
+
+<!--navbar options popup-->
+
+<!--chat box-->
+<div class ="chat-popup" id ="chat">
+    <form action ="/action" class = "form-container">
+        <span class = "closebtn" onclick = "closeChat()">&times;</span><br><br>
+        <label for="msg">Our agent is currently available to take your order.</label><br><br>
+        <textarea placeholder ="Type your message..." name = "msg" required></textarea>
+        <button type ="submit" class ="sendbtn">SEND </button>
+    </form>
+</div>
+<!--farms map--->
+<div class = "map">
+    <button class = "closeMap">&times;</button>
+     <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d98947.25620381629!2d-78.23286206728612!3d39.195136533115196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sfarms%20in%20Winchester%2C%20VA!5e0!3m2!1sen!2sus!4v1633999780914!5m2!1sen!2sus" width="500" height="150" style="border:1px solid black" allowfullscreen="" loading="lazy"></iframe>
+</div>
+<!--sign-in popup-->
+<div class = "signIn-modal">
+    <div class = "signInmodal-content">
+        <button class = "closeSignin">&times;</button>
+        <br><br>
+        <h4>SIGN IN TO YOUR GROCERIES PROFILE</h4>
+        <br>
+        <div class = "signin-content">
+            <p>DON'T HAVE ONE? <a href = "./profile/profile.html" style ="color:blue"><u>CREATE ONE</u></a></p><br>
+            <form action ="/action_page.php">
+                <label for = "email">EMAIL: </label><br>
+                <input type ="email" id="signin-email" name = "email">
+                <br>
+                <label for = "password">PASSWORD: </label><br>
+                <input type ="password" id="password" name = "password" >
+                <br><br>
+                <a href ="#forgot" style = "color:blue"><u>FORGOT PASSWORD?</u></a>
+                <br><br>
+                <button id ="signin-submit" type ="Submit">SIGN IN</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!--Content-->
+<div class = "store">
+    <h1><em style ="font-size:1.5rem">Fresh from our farms to your table </em> </h1><br>
+    <p>SELECT YOUR ITEMS FOR DELIVERY OR PICKUP</p> <br>
+    <div class = "selection-container"></div>
+
+<!--modal for produce that open when an item is selected-->
+    <div class = "produce-container">
+        <button class ="close-btn"><i class="fas fa-times"></i></button>
+        <br>
+<!--filter buttons-->
+        <div class = "produce-btn-container"></div>
+        <br>
+    <div class = "product-container"></div>
+    </div>
+<!--end of modal for produce-->
+</div>
+
+<footer>
+    <iframe src ="./setup/footer.html" title ="footer" scrolling = "no">
+    </iframe>
+</footer>
+<div class = "promotion-modal">
+    <div class = "modal-content">
+        <button class = "closeModal">&times;</button>
+        <br><br>
+        <h1>Live Well, Eat Healthy</h1>
+        <p>Click coupons to see today's sales</p><br>
+        <button id = "coupon">Coupons</button>
+        
+        <h2 id="subscribe">Subscribe to get weekly recipes and coupons</h2>
+        <form action ="/action_page.php">
+            <br>
+            <input type ="email" id="email" name = "email" placeholder ="Enter your email"><br><br>
+            <button id ="submit" type ="Submit">Submit</button>
+        </form>
+    </div>
+</div>
+<script src ="supplmentapp.js"></script>
+<script type = "module" src = "mainAPP.js"></script>
+</body>
+</html>

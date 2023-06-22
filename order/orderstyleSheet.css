@@ -1,0 +1,255 @@
+
+*{  
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    border-radius:5px;
+}
+body{
+    background:rgb(233, 232, 232);
+}
+a{
+    text-decoration:none;
+    color:black;
+}
+button:hover, a:hover{
+    color:rgb(12, 204, 12);
+    cursor: pointer;
+}
+/****end of Global****/
+/**nav-bar**/
+
+.nav-bar{
+    background:white;
+    padding:10px 50px 10px 50px;
+    font-size:1.25rem;
+}
+#logo2{
+    width:50px;
+    float:left;
+}
+.tabs{
+    padding-top:10px;
+}
+#home{
+    padding:20px;
+}
+#checkout, #sign-in{
+    float:right;
+    padding-right:20px;
+}
+#openSideBTN{
+    display:none;
+}
+/****adjust nav bar to mobile screen***/
+@media screen and (max-width:600px){
+  #openSideBTN{
+      display:block;
+      position:absolute;
+      top:0;
+      padding-top:20px;
+  }
+  #logo2{
+      float:none;
+      display:block;
+      margin:auto;
+  }
+  #home, #sign-in{
+      display:none;
+  }
+  #checkout{
+      float:none;
+      position:absolute;
+      top:0;
+      right:50px;
+      padding-top:20px;
+  }
+}
+/**side-bar**/
+.side-bar{
+  height:100%;
+  width:200px;
+  position:fixed;
+  z-index: 1;
+  top:0;
+  left:0;
+  overflow-x:hidden;
+  transition:0.5s;
+  padding-top:60px;
+  background:rgb(40, 240, 40);
+  transform:translateX(-300px);
+}
+.side-bar a{
+    padding: 20px 8px 8px 32px;
+    text-decoration:none;
+    font-size:20px;
+    color:black;
+    display:block;
+    transition:0.5s;
+}
+.side-bar a:hover{
+     background:white;
+}
+.closebtn{
+    position:absolute;
+    top:0;
+    right: 25px;
+    font-size:30px;
+    font-weight:bold;
+    transition: transform 0.5s;
+    text-align:right;
+    color:black;
+    border:none;
+    background:none;
+}
+.closebtn:hover{
+  color:white;
+  transform: rotate(360deg);
+}
+/**sign-in modal**/
+.signIn-modal{
+    display:none;
+    position:fixed;
+    z-index:1;
+    padding-top:100px;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    overflow:auto;
+    background-color:rgb(0,0,0);
+    background-color:rgba(0,0,0,0.4);
+}
+.signInmodal-content{
+    background-color:white;
+    width:50vw;
+    margin:auto;
+    padding:1rem;
+    border: 1px solid #888;
+    border-radius:5px;
+    text-align:left;
+    padding:0.75rem;
+    font-size:1.5rem;
+    color:black;
+}
+.signin-content{
+    font-size:1rem;
+}
+#signin-email, #password{
+    font-size:20px;
+    width:47vw;
+}
+#signin-submit{
+    display:block;
+    margin:auto;
+    padding:10px;
+    font-size:1.5rem;
+    background:gold;
+    width:25vw;
+}
+.closeSignin{
+    float:right;
+    font-size:30px;
+    background:none;
+    border:none;
+}
+
+/**content**/
+.order-container{
+    width:60vw;
+    display:block;
+    margin:auto;
+    text-align:center;
+}
+
+.order-options-container{
+    background:white;
+    width:60vw;
+}
+h3{
+    background:rgb(14, 182, 14);
+    padding:20px;
+}
+h4{
+    text-align:center;
+}
+.options-container{
+    background:white;
+    text-align:center;
+    display:block;
+    margin:auto;
+}
+#delivery-btn, #pickup-btn{
+    background:rgb(14, 182, 14);
+    padding:1rem;
+    border-radius:50%;
+    font-size:3rem;
+}
+#delivery-btn:hover, #pickup-btn:hover{
+    color:white;
+}
+
+.forms-container{
+    display:block;
+    margin:auto;
+    width:40vw;
+    background:white;
+    text-align:right;
+}
+
+input{
+    width:30vw;
+    height:30px;
+    margin-top:5px;
+}
+#city, #state{
+    width:10vw;
+}
+.submit-form{
+    background:gold;
+    font-size:1.25rem;
+    width:40vw;
+    padding:10px;
+    margin:10px;
+}
+.delivery-form{
+    display:none;
+}
+/**pickup-form**/
+#city2, #state2,#zipCode2{
+    width:10vw;
+}
+.pickup-form{
+    text-align:center;
+    display:none;
+}
+/**footer**/
+footer{
+    background:white;
+    width:100%;  
+    position:relative;
+    bottom:-200px;;
+}
+iframe{
+    background:none;
+    border:none;
+    display:block;
+    margin:auto;
+    overflow:hidden;
+}
+
+
+/****adjust to mobile screen***/
+/**Adjust the columns of containers inside store*/
+@media screen and (max-width:600px){
+  .order-container,.order-options-container,.options-container{
+      width:100%;
+  }
+  .forms-container{
+      width:60vw;
+  }
+  .signInmodal-content{
+    width:70%;
+}
+}
